@@ -1,0 +1,147 @@
+html {
+	background: #1d1d1f;
+}
+
+table,
+td,
+tr {
+	border-collapse: collapse;
+}
+
+.boardcontainer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.board {
+	display: block;
+	border: 4px solid black;
+}
+
+.board .row:nth-of-type(even) .space:nth-of-type(even),
+.board .row:nth-of-type(odd) .space:nth-of-type(odd) {
+	background-color: peachpuff;
+}
+
+.board .row:nth-of-type(odd) .space:nth-of-type(even),
+.board .row:nth-of-type(even) .space:nth-of-type(odd) {
+	background-color: rgb(20, 151, 20);
+}
+
+.board .row .space.active {
+	background-color: rgb(213, 224, 52) !important;
+}
+
+.space {
+	height: 75px;
+	width: 75px;
+	position: relative;
+	cursor: pointer;
+}
+
+.space[data-piece]:not([data-piece=""]):before {
+	content: "";
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 85%;
+	height: 85%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+
+.space[data-piece="K"]:before {
+	background-image: url(/UI/resources/pieces/wking.svg);
+}
+
+.space[data-piece="Q"]:before {
+	background-image: url(/UI/resources/pieces/wqueen.svg);
+}
+
+.space[data-piece="R"]:before {
+	background-image: url(/UI/resources/pieces/wrook.svg);
+}
+
+.space[data-piece="B"]:before {
+	background-image: url(/UI/resources/pieces/wbishop.svg);
+}
+
+.space[data-piece="N"]:before {
+	background-image: url(/UI/resources/pieces/wknight.svg);
+}
+
+.space[data-piece="P"]:before {
+	background-image: url(/UI/resources/pieces/wpawn.svg);
+}
+
+.space[data-piece="k"]:before {
+	background-image: url(/UI/resources/pieces/bking.svg);
+}
+
+.space[data-piece="q"]:before {
+	background-image: url(/UI/resources/pieces/bqueen.svg);
+}
+
+.space[data-piece="r"]:before {
+	background-image: url(/UI/resources/pieces/brook.svg);
+}
+
+.space[data-piece="b"]:before {
+	background-image: url(/UI/resources/pieces/bbishop.svg);
+}
+
+.space[data-piece="n"]:before {
+	background-image: url(/UI/resources/pieces/bknight.svg);
+}
+
+.space[data-piece="p"]:before {
+	background-image: url(/UI/resources/pieces/bpawn.svg);
+}
+
+.space[data-probability="0"]:before {
+	opacity: 0.1;
+}
+
+.space[data-probability="0"]:after {
+	opacity: 0.1;
+	content: "";
+	height: 5%;
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	right: 10%;
+	left: 10%;
+	background: -webkit-gradient(linear, left top, right top, from(#9dd53a), color-stop(0%, #a1d54f), color-stop(0%, transparent), to(transparent));
+	background: linear-gradient(to right, #9dd53a 0%, #a1d54f 0%, transparent 0%, transparent 100%);
+}
+.space[data-probability="1"]:before {
+	opacity: 0.109;
+}
+
+.space[data-probability="1"]:after {
+	opacity: 0.109;
+	content: "";
+	height: 5%;
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	right: 10%;
+	left: 10%;
+	background: -webkit-gradient(linear, left top, right top, from(#9dd53a), color-stop(1%, #a1d54f), color-stop(1%, transparent), to(transparent));
+	background: linear-gradient(to right, #9dd53a 0%, #a1d54f 1%, transparent 1%, transparent 100%);
+}
+
+
+
